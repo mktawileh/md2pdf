@@ -2,11 +2,13 @@ import MarkdownIt from "markdown-it";
 import hljs from "highlight.js/lib/core";
 import javascript from "highlight.js/lib/languages/javascript";
 import sql from "highlight.js/lib/languages/sql";
+import yaml from "highlight.js/lib/languages/yaml";
 import css from "highlight.js/lib/languages/css";
 
 import 'highlight.js/styles/default.css';
 
 hljs.registerLanguage("javascript", javascript);
+hljs.registerLanguage("yaml", yaml);
 hljs.registerLanguage("sql", sql);
 hljs.registerLanguage("css", css);
 
