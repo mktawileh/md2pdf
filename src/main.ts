@@ -42,19 +42,35 @@ if (textarea?.addEventListener("input", render) === null) {
     );
 }
 
+const appElement = document.getElementById("app");
+
 const content = document.querySelector(
     "#printable .content"
 ) as HTMLDivElement | null;
-const dirbutton = document.getElementById("dir-button");
 
-if (dirbutton?.addEventListener("click", handleDirButton) === null) {
+// Control Buttons.
+const dirButton = document.getElementById("dir-button");
+const filpButton = document.getElementById("flip-button");
+
+if (dirButton?.addEventListener("click", handleDirButton) === null) {
     console.error(
         "Error adding an input event listener for the textarea `#editor`"
     );
 }
 
+if (filpButton?.addEventListener("click", handleFlipButton) === null) {
+    console.error(
+        "Error adding an input event listener for the textarea `#editor`"
+    );
+}
+
+
 function handleDirButton() {
     updateState(state.direction == "rtl" ? "ltr" : "rtl");
+}
+
+function handleFlipButton() {
+    appElement?.classList.toggle("flipped");
 }
 
 function updateState(direction: "ltr" | "rtl"): any {
@@ -66,10 +82,8 @@ function updateDom(state: State) {
     if (content) {
         content.dir = state.direction;
     }
-    if (dirbutton) {
-        dirbutton.innerText =
-            "Switch To " +
-            (state.direction == "ltr" ? "rtl" : "ltr").toUpperCase();
+    if (dirButton) {
+        dirButton.innerText = (state.direction == "ltr" ? "rtl" : "ltr").toUpperCase();
     }
 }
 

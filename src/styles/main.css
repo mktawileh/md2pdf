@@ -6,6 +6,10 @@
   direction: ltr;
 }
 
+#app.flipped {
+  flex-direction: row-reverse;
+}
+
 #markdown-editor, #printable {
   width: 50%;
   height: 100vh;
@@ -44,9 +48,8 @@
 }
 
 .controls button {
-  width: 50%;
   padding: 0.5rem 1rem;
-  font-size: 1.5rem;
+  font-size: 1rem;
   border-radius: 1rem;
   border: none;
   outline: none;
@@ -54,6 +57,10 @@
   background-color: #363636;
   color: white;
   transition: background-color 100ms ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .controls button:hover {
@@ -145,6 +152,19 @@ pre {
 
 hr {
   margin: 1.5rem;
+}
+
+svg.icon {
+  width: 25px;
+  height: 25px;
+}
+
+svg.icon .icon-fill {
+  fill: white;
+}
+
+svg.icon .icon-stroke {
+  stroke: white;
 }
 
 @media print {
