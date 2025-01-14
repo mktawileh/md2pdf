@@ -4,6 +4,7 @@ import javascript from "highlight.js/lib/languages/javascript";
 import sql from "highlight.js/lib/languages/sql";
 import yaml from "highlight.js/lib/languages/yaml";
 import css from "highlight.js/lib/languages/css";
+import dart from "highlight.js/lib/languages/dart";
 
 import 'highlight.js/styles/default.css';
 
@@ -11,6 +12,7 @@ hljs.registerLanguage("javascript", javascript);
 hljs.registerLanguage("yaml", yaml);
 hljs.registerLanguage("sql", sql);
 hljs.registerLanguage("css", css);
+hljs.registerLanguage("dart", dart);
 
 import "./styles/main.css";
 import "./styles/font.css";
